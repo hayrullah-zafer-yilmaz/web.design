@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    :root {
+        --card-body-color: #232949;
+        --background-color: whitesmoke;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: var(--background-color);
+    }
+
+    .card {
+        position: relative;
+        width: 320px;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px;
+    }
+
+    .card .img-box {
+        position: relative;
+        width: 100%;
+        height: 240px;
+        border-radius: 15px;
+        background-size: cover;
+        background-color: gray;
+    }
+
+    .card .img-box::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-radius: 50%;
+        box-shadow: -10px 10px 0 var(--background-color);
+    }
+
+    .card .img-box::after {
+        content: "";
+        position: absolute;
+        bottom: 70px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border-radius: 50%;
+        box-shadow: -10px 10px 0 var(--background-color);
+    }
+
+
+    .card .content {
+        position: relative;
+        width: 100%;
+        height: 150px;
+        background-color: var(--card-body-color);
+        border-radius: 15px;
+        border-top-left-radius: 0;
+        padding: 0 35px;
+    }
+
+    .card .content ul {
+        color: #ffffff;
+    }
+
+    .card .content .price {
+        position: absolute;
+        background-color: var(--card-body-color);
+        left: 0;
+        top: -80px;
+        height: 80px;
+        width: 50%;
+        border-top: 10px solid var(--background-color);
+        border-right: 10px solid var(--background-color);
+        border-top-right-radius: 25px;
+    }
+    
+    .card .content .price::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: transparent;
+        box-shadow: -10px -10px 0 var(--background-color);
+    }
+
+    .card .content .price::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: -25px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: transparent;
+        box-shadow: -10px 10px 0 var(--card-body-color);
+    }
+
+    .card .content .price a {
+        position: relative;
+        background-color: #f5f5f5;
+        padding: 10px 10px;
+        margin: 15px;
+        display: block;
+        border-radius: 7px;
+        color: #333333;
+        font-weight: 700;
+        text-decoration: none;
+        
+    }
+</style>
+
+<body>
+    <div class="card">
+        <div class="img-box" data-background-image="./asset/image/house01.jpg"></div>
+        <div class="content">
+            <span class="price">
+                <a href="#">1,000,000 TL</a>
+            </span>
+            <ul>
+                <li>Somewhere</li>
+                <li>1200sqm</li>
+                <li>House</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="img-box" data-background-image="./asset/image/house02.jpg"></div>
+        <div class="content">
+            <span class="price">
+                <a href="#">1,000,000 TL</a>
+            </span>
+            <ul>
+                <li>Somewhere</li>
+                <li>1200sqm</li>
+                <li>House</li>
+            </ul>
+        </div>
+    </div>
+
+<script>
+    window.document.querySelectorAll(".card div.img-box").forEach(item => item.style.backgroundImage = `url("${item.getAttribute("data-background-image")}")`);
+</script>
+
+</body>
+
+</html>
