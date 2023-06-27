@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap');
+
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 16px;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f5f5;
+            user-select: none;
+            overflow: hidden auto;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 80%;
+            padding: 10px;
+            grid-gap: 20px;
+        }
+
+        .card {
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        .card:nth-child(1) {
+            grid-column: 1 / span 2;
+            background-color: #8BC6EC;
+            background-image: linear-gradient(270deg, #8BC6EC 0%, #9599E2 100%);
+        }
+
+        .card:nth-child(2) {
+            background-color: #FBAB7E;
+            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        }
+
+        .card:nth-child(3) {
+            grid-column: 4;
+            grid-row: 1 / span 2;
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+        }
+
+        .card:nth-child(4) {
+            background-color: #FFDEE9;
+            background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+        }
+
+        .card:nth-child(5) {
+            grid-column-start: 2;
+            grid-column-end: 4;
+            background-color: #74EBD5;
+            background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+        }
+
+        p {
+            font-size: 0.85rem;
+        }
+
+        @media screen and (max-width: 1300px) {
+            .card:nth-child(3) {
+                grid-row: 2;
+                grid-column: 1 / span 4;
+            }
+
+            .card:nth-child(5) {
+                grid-column: 1 / 5;
+            }
+        }
+
+        @media screen and (max-width: 1100px) {
+
+            .card:nth-child(1),
+            .card:nth-child(2),
+            .card:nth-child(4) {
+                grid-column: 1 / 5;
+            }
+
+            body {
+                justify-content: start;
+            }
+        }
+
+        /* BEGIN: Scrollbar */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px #808080;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #8b0000;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff6347;
+        }
+
+        /* END: Scrollbar */
+    </style>
+</head>
+
+<body>
+
+    <div class="card-container">
+        <div class="card">
+            <h3 class="card-header">HTML</h3>
+            <p>Hypertext Markup Language'ın kısaltmasıdır. HTML, web sayfalarının yapısını ve içeriğini tanımlamak için kullanılan bir işaretleme dilidir. Web tarayıcıları tarafından anlaşılabilen bir
+                formatta yazılan HTML belgeleri, web sayfalarının görüntülenmesini sağlar.</p>
+            <p>HTML, metin, resimler, bağlantılar, tablolar, form alanları ve diğer çeşitli öğeleri içerebilen yapısal bir dildir. Belge içinde etiketler kullanarak içeriği işaretler ve yapılandırır.
+                Her bir etiket genellikle açılış (<tag>) ve kapanış (</tag>) şeklinde iki bileşenden oluşur. Etiketler, içeriklerin nasıl görüntüleneceğini belirtir veya belgeye özel işlevler ekler.
+            </p>
+        </div>
+        <div class="card">
+            <h3 class="card-header">CSS</h3>
+            <p>CSS, Cascading Style Sheets'in kısaltmasıdır. CSS, web sayfalarının görünümünü ve düzenini kontrol etmek için kullanılan bir stil dilidir. HTML veya diğer işaretleme dilleriyle birlikte
+                kullanılarak, web sayfalarının renkleri, fontları, boyutları, yerleşimi ve diğer görsel özellikleri belirlenir.</p>
+        </div>
+        <div class="card">
+            <h3 class="card-header">JavaScript</h3>
+            <p>JavaScript, web tarayıcılarında çalışabilen bir programlama dilidir. İnteraktif web sayfaları oluşturmak ve web uygulamalarını geliştirmek için kullanılır. JavaScript, HTML ve CSS ile
+                birlikte kullanılarak web sayfalarına dinamik özellikler eklemeyi sağlar.</p>
+            <p>JavaScript, tarayıcı tarafında çalıştığı için istemci tarafı (client-side) bir programlama dilidir. Web sayfasının HTML yapısına erişebilir ve sayfadaki öğelerle (butonlar, formlar,
+                metin alanları vb.) etkileşim kurabilir. Ayrıca, web tarayıcısının sağladığı API'ler ve özellikler aracılığıyla kullanıcının eylemlerine tepki verebilir, verileri işleyebilir ve sunucu
+                ile iletişim kurabilir.</p>
+            <p>JavaScript, birçok farklı amaç için kullanılabilir. Sayfa içindeki öğelerin görünürlüğünü değiştirebilir, animasyonlar oluşturabilir, kullanıcı girişlerini doğrulayabilir, veri işleme
+                ve manipülasyonu yapabilir, sunucuyla veri alışverişi yapabilir ve dinamik içerikleri güncelleyebilir. Ayrıca, JavaScript'in popüler web framework'leri ve kütüphaneleri (örneğin React,
+                Angular, Vue.js) sayesinde daha karmaşık web uygulamaları da geliştirilebilir.</p>
+        </div>
+        <div class="card">
+            <h3 class="card-header">React JS</h3>
+            <p>React, bileşen tabanlı bir yapıya sahiptir. Web sayfasını birden fazla bağımsız bileşene ayırarak her bir bileşeni ayrı ayrı yönetmeyi sağlar. Her bir bileşen, kendi içinde durum
+                (state) ve davranış (behavior) tutabilir ve bileşenler arasında veri iletişimi sağlamak kolaydır. Bu yapı, kodun yeniden kullanılabilirliğini artırır ve büyük projelerin yönetimini
+                kolaylaştırır.</p>
+        </div>
+        <div class="card">
+            <h3 class="card-header">NodeJS</h3>
+            <p>Node.js, JavaScript tabanlı bir çalışma zamanı ortamıdır. Sunucu tarafında uygulama geliştirmek için kullanılır. Node.js, web sunucusu gibi sunucu tarafı işlevlerini gerçekleştirmek
+                için JavaScript'i kullanmanıza olanak tanır.</p>
+            <p>Node.js, öncelikle tarayıcı dışında JavaScript'in çalışabilmesini sağlar. Node.js, V8 JavaScript motorunu temel alır ve JavaScript kodunu sunucu tarafında çalıştırır. Bu da
+                JavaScript'in sadece tarayıcıda değil, sunucu tarafında da kullanılabilmesini sağlar.</p>
+            <p>Node.js, paket yöneticisi olan npm (Node Package Manager) ile birlikte gelir. npm, geliştiricilerin hazır paketleri kullanarak projelerini hızlı bir şekilde genişletmelerine ve
+                yönetmelerine olanak tanır. npm, milyonlarca açık kaynaklı paketi içeren geniş bir ekosisteme sahiptir.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
