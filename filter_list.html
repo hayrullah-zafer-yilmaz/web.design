@@ -107,8 +107,6 @@
 
 <body>
 
-    
-
     <div class="wrapper">
         <input type="text" id="search" class="input"  placeholder="Aranacak Kişi">
         <ul id="list" style="list-style-type: none; padding: 0;"></ul>
@@ -142,15 +140,12 @@
         }
 
         window.document.getElementById("search").addEventListener("input", (event) => {
-            window.console.log("ok");
             const filter = search.value.toUpperCase();
-            console.log(window.document.querySelectorAll("#list li"));
             window.document.querySelectorAll("#list li").forEach(listItem => {
                 const text = listItem.textContent.toUpperCase();
                 listItem.style.display = text.includes(filter) ? "" : "none";
             });
         }, false);
-
 
     </script>
 </body>
