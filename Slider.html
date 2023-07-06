@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Z@fer YILMAZ">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+        }
+
+        #slider {
+            height: 50%;
+            width: 50%;
+            overflow: auto;
+            padding: 10px;
+            border-radius: 10px;
+            background-image: linear-gradient( 94.3deg,  rgba(26,33,64,1) 10.9%, rgba(81,84,115,1) 87.1% );
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        }
+
+        #slider .slider-header h1,
+        #slider .slider-header h2,
+        #slider .slider-header h3,
+        #slider .slider-header h4,
+        #slider .slider-header h5,
+        #slider .slider-header h6 {
+            margin: 0;
+            color: #D6D6E7;
+            letter-spacing: 2px;
+            font-family: monospace;
+        }
+
+        .slider-header,
+        .slider-footer {
+            height: 10%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .display-none {
+            display: none;
+        }
+
+        .slider-footer .slider-button-wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            column-gap: 10px;
+            row-gap: 0;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .slider-content {
+            height: 80%;
+            width: 100%;
+        }
+
+        .slider-item-wrapper:not(:nth-child(1)) {
+            display: none;
+
+        }
+
+        .slider-item-wrapper {
+            height: 100%;
+        }
+
+        .box {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 250px;
+            height: 250px;
+            color: #f5f5f5;
+            font-weight: 900;
+            letter-spacing: 2.5px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .slider-item-wrapper:nth-child(1) .box .item {
+            background-image: radial-gradient(circle farthest-corner at 17.1% 22.8%, rgba(226, 24, 24, 1) 0%, rgba(160, 6, 6, 1) 90%);
+        }
+
+        .slider-item-wrapper:nth-child(2) .box .item {
+            background-image: linear-gradient(109.6deg, rgba(102, 51, 153, 1) 11.2%, rgba(2, 0, 4, 1) 91.1%);
+        }
+
+        .slider-item-wrapper:nth-child(3) .box .item {
+            background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(147, 67, 67, 1) 0%, rgba(111, 27, 27, 1) 90%);
+        }
+
+
+        .slider-button {
+            align-items: center;
+            appearance: none;
+            background-color: #FCFCFD;
+            border-radius: 4px;
+            border-width: 0;
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            box-sizing: border-box;
+            color: #36395A;
+            cursor: pointer;
+            display: inline-flex;
+            font-family: "JetBrains Mono", monospace;
+            height: 48px;
+            justify-content: center;
+            line-height: 1;
+            list-style: none;
+            overflow: hidden;
+            padding-left: 16px;
+            padding-right: 16px;
+            position: relative;
+            text-align: left;
+            text-decoration: none;
+            transition: box-shadow .15s, transform .15s;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            white-space: nowrap;
+            will-change: box-shadow, transform;
+            font-size: 18px;
+        }
+
+        .slider-button:focus {
+            box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+        }
+
+        .slider-button:hover {
+            box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+            transform: translateY(-2px);
+        }
+
+        .slider-button:active {
+            box-shadow: #D6D6E7 0 3px 7px inset;
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="slider">
+        <div class="slider-header">
+            <h2>Slider Title</h2>
+        </div>
+        <div class="slider-content">
+            <div class="slider-item-wrapper">
+                <div class="box">
+                    <div class="item"> 1.1 </div>
+                    <div class="item"> 1.2 </div>
+                </div>
+            </div>
+            <div class="slider-item-wrapper">
+                <div class="box">
+                    <div class="item"> 2.1 </div>
+                    <div class="item"> 2.2 </div>
+                </div>
+            </div>
+            <div class="slider-item-wrapper">
+                <div class="box">
+                    <div class="item"> 3.1 </div>
+                    <div class="item"> 3.2 </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-footer">
+            <div class="slider-button-wrapper">
+                <button class="slider-button" role="button">Tablo 1 / Tablo 2</button>
+                <button class="slider-button" role="button">Tablo 3 / Tablo 4</button>
+                <button class="slider-button" role="button">Tablo 5 / Tablo 6</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sliderItems = window.document.querySelectorAll("#slider > .slider-content > .slider-item-wrapper");
+        const sliderButtons = window.document.querySelectorAll("#slider > .slider-footer > .slider-button-wrapper > *");
+
+        !(sliderItems.length == sliderButtons.length) && console.warn("Developer Message: class = \".slider-item-wrapper\" class kadar button eklenmesi gerekmektedir.");
+        sliderItems.length == sliderButtons.length && [...sliderButtons.entries()].forEach(([index, sliderButton]) => {
+            sliderButton.addEventListener("click", () => {
+                for (let i = 0; i < sliderItems.length; i++) {
+                    if (i === index) {
+                        sliderItems[i].style.display = "block";
+                    } else {
+                        sliderItems[i].style.display = "none";
+                    }
+                }
+            }, false);
+        });
+
+
+    </script>
+</body>
+
+</html>
