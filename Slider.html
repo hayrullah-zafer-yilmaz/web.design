@@ -191,7 +191,7 @@
                 <div class="box">
                     <div class="item"> 3.1 </div>
                     <div class="item"> 3.2 </div>
-                    <div class="item"> 3.5 </div>
+                    <div class="item"> 3.3 </div>
                 </div>
             </div>
         </div>
@@ -210,8 +210,9 @@
         !(sliderItems.length == sliderButtons.length) && console.warn("Developer Message: class = \".slider-item-wrapper\" class kadar button eklenmesi gerekmektedir.");
         sliderItems.length == sliderButtons.length && [...sliderButtons.entries()].forEach(([index, sliderButton]) => {
             sliderButton.addEventListener("click", () => {
-                for (let i = 0; i < sliderItems.length; i++) 
-                    i === index ? sliderItems[i].style.display = "block" : sliderItems[i].style.display = "none";
+                sliderItems.forEach((item, increment) => {
+                    increment === index ? sliderItems[i].style.display = "block" : sliderItems[i].style.display = "none";
+                });
             }, false);
         });
     </script>
