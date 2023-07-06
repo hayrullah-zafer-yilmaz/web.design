@@ -208,7 +208,6 @@
     <script>
         const sliderItems = window.document.querySelectorAll("#slider > .slider-content > .slider-item-wrapper");
         const sliderButtons = window.document.querySelectorAll("#slider > .slider-footer > .slider-button-wrapper > *");
-
         !(sliderItems.length == sliderButtons.length) && console.warn("Developer Message: class = \".slider-item-wrapper\" class kadar button eklenmesi gerekmektedir.");
         sliderItems.length == sliderButtons.length && [...sliderButtons.entries()].forEach(([index, sliderButton]) => {
             sliderButton.addEventListener("click", () => {
