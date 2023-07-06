@@ -168,7 +168,6 @@
 
 <body>
 
-
     <div id="slider">
         <div class="slider-header">
             <h2>Slider Title</h2>
@@ -211,13 +210,8 @@
         !(sliderItems.length == sliderButtons.length) && console.warn("Developer Message: class = \".slider-item-wrapper\" class kadar button eklenmesi gerekmektedir.");
         sliderItems.length == sliderButtons.length && [...sliderButtons.entries()].forEach(([index, sliderButton]) => {
             sliderButton.addEventListener("click", () => {
-                for (let i = 0; i < sliderItems.length; i++) {
-                    if (i === index) {
-                        sliderItems[i].style.display = "block";
-                    } else {
-                        sliderItems[i].style.display = "none";
-                    }
-                }
+                for (let i = 0; i < sliderItems.length; i++) 
+                    i === index ? sliderItems[i].style.display = "block" : sliderItems[i].style.display = "none";
             }, false);
         });
     </script>
