@@ -211,7 +211,7 @@
         sliderItems.length == sliderButtons.length && [...sliderButtons.entries()].forEach(([index, sliderButton]) => {
             sliderButton.addEventListener("click", () => {
                 sliderItems.forEach((item, increment) => {
-                    increment === index ? sliderItems[i].style.display = "block" : sliderItems[i].style.display = "none";
+                    increment === index ? sliderItems[increment].style.display = "block" : sliderItems[increment].style.display = "none";
                 });
             }, false);
         });
