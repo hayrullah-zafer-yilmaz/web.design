@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #212121;
+        }
+
+        .form-control {
+            position: relative;
+            margin: 20px 0 40px;
+            width: 190px;
+        }
+
+        .form-control input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 2px #fff solid;
+            display: block;
+            width: 100%;
+            padding: 15px 0;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .form-control input:focus,
+        .form-control input:valid {
+            outline: 0;
+            border-bottom-color: lightblue;
+        }
+
+        .form-control label {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .form-control label span {
+            display: inline-block;
+            font-size: 18px;
+            min-width: 5px;
+            color: #fff;
+            transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .form-control input:focus+label span,
+        .form-control input:valid+label span {
+            color: lightblue;
+            transform: translateY(-30px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-control">
+        <div style="position: relative; margin-bottom: 40px;">
+            <input type="value" required="">
+            <label>
+                <span style="transition-delay:0ms;">K</span>
+                <span style="transition-delay:50ms;">u</span>
+                <span style="transition-delay:100ms;">l</span>
+                <span style="transition-delay:150ms;">l</span>
+                <span style="transition-delay:200ms;">a</span>
+                <span style="transition-delay:250ms;">n</span>
+                <span style="transition-delay:300ms;">ı</span>
+                <span style="transition-delay:350ms;">c</span>
+                <span style="transition-delay:400ms;">ı</span>
+                <span style="transition-delay:450ms;">&nbsp;</span>
+                <span style="transition-delay:500ms;">A</span>
+                <span style="transition-delay:550ms;">d</span>
+                <span style="transition-delay:600ms;">ı</span>
+            </label>
+        </div>
+        <div style="position: relative;">
+            <input type="password" required="">
+            <label>
+                <span style="transition-delay:0ms;">P</span>
+                <span style="transition-delay:50ms;">a</span>
+                <span style="transition-delay:100ms;">r</span>
+                <span style="transition-delay:150ms;">o</span>
+                <span style="transition-delay:200ms;">l</span>
+                <span style="transition-delay:250ms;">a</span>
+            </label>
+        </div>
+    </div>
+
+</body>
+
+</html>
