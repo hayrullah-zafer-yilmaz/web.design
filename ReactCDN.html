@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React CDN</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .card {
+            border-radius: 10px;
+            width: 250px;
+            padding: 10px;
+            margin: 60px 15px;
+            transform: rotate(-10deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+        const { Fragment } = React;
+        const techs = ["HTML", "CSS", "JavaScript", "C#", "Java", "Python", "C++", "C", "Ruby", "Kotlin", "PHP"];
+        const library = ["React", "Vue"];
+
+        const layputStyle = { display: "flex", flexDirecion: "row", justifyContent: "center", alignItems: "center" };
+        const headerStyle = { color: 'black', fontSize: '18px', padding: 10, borderRadius: 10 };
+        const mainStyle = { color: 'black', padding: 10, borderRadius: 10, margin: "10px 0" };
+        const footerStyle = {
+            border: '2px solid darkred',
+            borderLeft: 0,
+            borderRight: 0,
+            borderBottom: 0,
+            color: 'black',
+            padding: 2.5,
+            position: "absolute",
+            bottom: 0,
+            textAlign: "center",
+            width: "100%",
+        };
+
+        // Component, Header
+        const Header = () => (
+            <header style={headerStyle}>
+                <h1>Welcome React</h1>
+                <h2>Getting Started React</h2>
+                <h3>JavaScript Library</h3>
+                <p>Z<span style={{ color: "darkorange", fontWeight: 900 }}>@</span>fer YILMAZ</p>
+                <small>Oct 23, 2023</small>
+            </header>
+        );
+
+        // Component, Main
+        const Main = ({ children } = props) => (
+            <main style={mainStyle}>
+                {children}
+            </main>
+        );
+
+        // Component, Footer
+        const Footer = () => (
+            <footer style={footerStyle}>
+                <p>Copyright 2020</p>
+            </footer>
+        );
+
+        // Component, Layout
+        const Layout = ({ children }) => (
+            <div style={layputStyle}>
+                {children}
+            </div>
+        );
+
+        const Card = ({ dataList, style, cardHeader } = props) => (
+            <Fragment>
+                <div className="card" style={{ ...style, boxShadow: "rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset" }}>
+                    <h1>{cardHeader}</h1>
+                    <ul style={{ listStyleType: "none" }}>
+                        {dataList.map((item, index) => <Fragment key={index}><li><span style={{ color: "darkred", fontWeight: 900, fontFamily: "monospace" }}>{index + 1}&nbsp;-&nbsp;</span><span style={{ color: "darkorange" }}>{item}</span></li></Fragment>)}
+                    </ul>
+                </div>
+            </Fragment>
+        );
+
+        const App = () => (
+            <Layout>
+                <Header />
+                <Main children={
+                        <Fragment>
+                            <Card dataList={techs} cardHeader="Techs" />
+                            <Card dataList={library} cardHeader="Libs" style={{ transform: "rotate(10deg)", }} onMouseEnter={() => alert("ok")} />
+                        </Fragment>
+                    }
+                />
+                <Footer />
+            </Layout>
+        );
+        ReactDOM.createRoot(self.document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>
