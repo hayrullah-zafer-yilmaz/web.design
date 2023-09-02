@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Async and Await</title>
+</head>
+
+<div id="result"></div>
+
+<body>
+    <script>
+        self.document.addEventListener("DOMContentLoaded", function () {
+            (async function getData(url) {
+                try {
+                    await (await (await fetch(url)).json())
+                        .forEach(function (item, index, array) {
+                            self.document.getElementById("result").innerHTML
+                                += `<span style='color: darkorange;'>${(index + 1).toString()}-</span> ${array[index].title} <br /><code style='font-weight: 900; color: red; margin-left: 20px;'>&lt;/&gt;</code> ${array[index].body}<br />`;
+                        });
+                } catch (error) {
+                    console.error("ERROR MESSAGE:", error);
+                }
+            })("https://jsonplaceholder.typicode.com/posts");
+        });
+
+
+    </script>
+</body>
+
+</html>
