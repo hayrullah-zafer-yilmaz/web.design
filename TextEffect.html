@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Zafer YILMAZ">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="texxt"></div>
+
+    <script>
+        function textEffect({
+            htmlElementId,
+            text,
+            speed = 50,
+        }) {
+            let index = 0;
+            const outputElement = window.document.getElementById(htmlElementId);
+            const textLength = text.length;
+
+            function typeNextCharacter() {
+                if (index < textLength) {
+                    const character = text.charAt(index);
+                    outputElement.textContent += character;
+                    ++index;
+                    setTimeout(typeNextCharacter, speed);
+                }
+            }
+            typeNextCharacter();
+        }
+
+        const text = "Node.js, açık kaynaklı bir JavaScript çalıştırma ortamıdır ve sunucu tarafı uygulamalar geliştirmek için kullanılır. JavaScript'i sunucu tarafında çalıştırmak için geliştirilmiş olan Node.js, etkili bir şekilde ağ tabanlı uygulamalar, web sunucuları ve API'ler oluşturmanıza olanak tanır. Node.js, tek bir iş parçacığı (thread) yerine olay tabanlı ve asenkron bir yapı kullanarak yüksek performanslı ve ölçeklenebilir uygulamalar geliştirmenize olanak sağlar. Bu sayede çok sayıda eşzamanlı bağlantıyı kolayca yönetebilir ve veri işleme görevlerini etkili bir şekilde gerçekleştirebilirsiniz. Node.js, birçok geliştirici tarafından web ve mobil uygulama geliştirmek için tercih edilen bir teknoloji haline gelmiştir.";
+        textEffect({
+            htmlElementId: "texxt",
+            text,
+            speed: 25,
+        });
+    </script>
+</body>
+
+</html>
