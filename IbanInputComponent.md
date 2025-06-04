@@ -1,5 +1,3 @@
-Mükemmel — şimdi senin için `IbanInput` bileşenini:
-
 1. **Caret pozisyonu (imleç kayması)** sorununu profesyonelce çözeceğim.
 2. Kodun iç yapısını optimize edeceğim (gereksiz state kullanımını kaldırarak daha stabil hale getireceğim).
 3. **%100 kontrollü, UX-dostu, yeniden kullanılabilir, test edilebilir** bir yapı sunacağım.
